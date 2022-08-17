@@ -42,6 +42,12 @@ namespace TravelClient.Controllers
       Destination.Put(destination);
       return RedirectToAction("Details", id);
     }
+
+    public IActionResult Delete(int id)
+    {
+      Destination.Delete(id);
+      return RedirectToAction("Index");
+    }
    
   }
 
