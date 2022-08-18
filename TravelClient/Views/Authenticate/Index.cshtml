@@ -1,32 +1,27 @@
+@model TravelClient.Models.User
 @{
-  Layout = "_Layout";
+    ViewData["Title"] = "Index";
 }
-@using TravelClient.Models;
 
-
-
-@using System.Security.Claims
-
-<h2>User Portal</h2>
-<p>Here you can create and organize your inventory.</p>
 <hr />
+<div class="row">  
+    <div class="col-md-4">
+        <form asp-action="Login"> 
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Username" class="control- label"></label> 
+                <input asp-for="Username" class="form-control" /> 
+                <span asp-validation-for= "Username" class="text-danger"></span>        
+            </div>
+            <div class="form-group">
+                <label asp-for="Password" class="control-label"></label>    
+                <input asp-for="Password" type="password" class="form-control"/>    
+                <span asp-validation-for="Password" class="text-danger"></span> 
+            </div>
+            <div class="form-group">                
+                <input type="submit" value="Login" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
 
-@if (User.Identity.IsAuthenticated)
-{
-  <p>Hello @User.Identity.Name!</p>
-  @using (Html.BeginForm("LogOut", "Account"))
-  {
-    <input type="submit" class="btn btn-warning" value="Log out" />
-  }
-}
-else
-{
-  <p>@Html.ActionLink("Register", "Register")</p>
-  <p>@Html.ActionLink("Log in", "Login")</p>
-}
-<hr />
-
-
-
-
-<p>@Html.ActionLink("Back to Home", "Index", "Home")</p>
+</div>
