@@ -1,0 +1,16 @@
+<h1>Edit Info:</h1>
+<form action="/Destinations/Details/@(Model.DestinationId)" method="post">
+  <label for="name">Destinations's Name</label>
+  <input id="name" name="name" type="text" value="@(Model.Name)">
+  <label for="state">Destination's State/Province</label>
+  <input id="state" name="state" type="text" value="@(Model.State)">
+  <label for="country">Destination's Country</label>
+  <input id="country" name="country" type="text" value="@(Model.Country)">
+  <label for="description">Description</label>
+  <input id="description" name="description" type="text" value="@(Model.Description)" placeholder="Max 300 characters">
+  <label for="rating">Rating</label>
+  <input id="rating" name="rating" type="number" value="@(Model.Rating)" placeholder="0-10">
+  <button type="submit">Submit</button>
+</form>
+
+<a href="/Destinations/Details/@(Model.DestinationId)"><p>Return to Details</p></a>

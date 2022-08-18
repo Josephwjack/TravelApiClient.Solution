@@ -20,7 +20,7 @@ namespace TravelClient.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            return RedirectToAction("Index", "Destinations");
         }
 
         public IActionResult Privacy()

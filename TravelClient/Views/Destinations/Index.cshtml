@@ -1,7 +1,11 @@
+@{
+  Layout = "_Layout";
+}
+
 <h1>All Destinations:</h1>
 
 <ol>
-@foreach (Animal destination in Model)
+@foreach (Destination destination in Model)
 {
     <ul>
         <li>ID: @destination.DestinationId</li>
